@@ -1,11 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
-    
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
+         <image>
+            <Image url="@imgs/1920x1280%20academy.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <MenuBar prefHeight="28.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Alunos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onBtnRegister" text="Cadastrar">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Listar Alunos">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Manutenção">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Financeiro">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="tableCustomers" layoutX="14.0" layoutY="210.0" prefHeight="576.0" prefWidth="620.0">
+        <columns>
+          <TableColumn fx:id="columnRegistration" prefWidth="200.0" text="Matricula" />
+            <TableColumn fx:id="columnName" minWidth="250.0" prefWidth="75.0" text="Nome" />
+        </columns>
+      </TableView>
+      <Button layoutX="474.0" layoutY="154.0" mnemonicParsing="false" onAction="#onBtnSearch" prefHeight="40.0" prefWidth="160.0" text="Pesquisar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtSearch" layoutX="14.0" layoutY="154.0" prefHeight="40.0" prefWidth="435.0" promptText="Pesquisar" />
+      <Pane layoutX="644.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="542.0" styleClass="showProfile-border">
+         <children>
+            <ImageView fx:id="potho" fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+               <image>
+                  <Image url="@imgs/1024x1024_GYM.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="name" layoutX="183.0" layoutY="14.0" prefHeight="50.0" prefWidth="345.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="age" layoutX="183.0" layoutY="80.0" prefHeight="27.0" prefWidth="99.0" text="Idade:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="sex" layoutX="356.0" layoutY="80.0" prefHeight="27.0" prefWidth="170.0" text="Sexo:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="contact" layoutX="183.0" layoutY="126.0" prefHeight="27.0" prefWidth="345.0" text="Contato:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="email" layoutX="14.0" layoutY="227.0" prefHeight="27.0" prefWidth="514.0" text="E-mail:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="304.0" text="----- Responsavel -----">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="responsibleName" layoutX="14.0" layoutY="333.0" prefHeight="27.0" prefWidth="382.0" text="Nome:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="emergencyContact" layoutX="14.0" layoutY="271.0" prefHeight="27.0" prefWidth="400.0" text="Contato de emergência:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="responsibleContact" layoutX="14.0" layoutY="371.0" prefHeight="27.0" prefWidth="382.0" text="Contato:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="407.0" text="----- Pagamentos -----">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listPayment" layoutX="14.0" layoutY="512.0" prefHeight="185.0" prefWidth="514.0" />
+            <Label fx:id="registration" layoutX="14.0" layoutY="183.0" prefHeight="27.0" prefWidth="330.0" text="Matricula:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="status" layoutX="360.0" layoutY="183.0" prefHeight="27.0" prefWidth="170.0" text="Status:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lastPayment" layoutX="14.0" layoutY="469.0" prefHeight="27.0" prefWidth="345.0" text="Data do ultimo Pagamento:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="366.0" layoutY="467.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="164.0" text="Carregar Pagamentos">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="plan" layoutX="14.0" layoutY="436.0" prefHeight="27.0" prefWidth="345.0" text="Plano:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="value" layoutX="364.0" layoutY="436.0" prefHeight="27.0" prefWidth="164.0" text="Valor:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="305.0" layoutY="703.0" mnemonicParsing="false" onAction="#onBtnEdit" prefHeight="40.0" prefWidth="225.0" text="Editar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="276.0" text="Atualizar Pagamento">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

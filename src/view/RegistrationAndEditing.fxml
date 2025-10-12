@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="584.0" prefWidth="1080.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <ImageView fitHeight="584.0" fitWidth="1080.0" pickOnBounds="true">
+         <image>
+            <Image url="@imgs/1920x1280%20academy.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/1024x1024_GYM.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnSaveAndEdit" layoutX="16.0" layoutY="510.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="515.0" text="Salvar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtName" layoutX="188.0" layoutY="14.0" prefHeight="40.0" prefWidth="340.0" promptText="Nome">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAge" layoutX="190.0" layoutY="76.0" prefHeight="40.0" prefWidth="141.0" promptText="Idade">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cbSex" layoutX="348.0" layoutY="76.0" prefHeight="40.0" prefWidth="180.0" promptText="Sexo" />
+      <TextField fx:id="txtContact" layoutX="191.0" layoutY="124.0" prefHeight="40.0" prefWidth="340.0" promptText="Contato">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button layoutX="14.0" layoutY="176.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Adicionar Imagen" />
+      <TextField fx:id="txtEmergencyContact" layoutX="190.0" layoutY="176.0" prefHeight="40.0" prefWidth="340.0" promptText="Contato de Emergência (Opcional)" />
+      <TextField fx:id="txtEmail" layoutX="16.0" layoutY="233.0" prefHeight="40.0" prefWidth="515.0" promptText="E-mail (Opcional)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cbStatus" layoutX="305.0" layoutY="295.0" prefHeight="40.0" prefWidth="225.0" promptText="Status Da Matricula" />
+      <ComboBox fx:id="cbPlan" layoutX="14.0" layoutY="295.0" prefHeight="40.0" prefWidth="270.0" promptText="Plano" />
+      <Pane layoutX="551.0" layoutY="14.0" prefHeight="252.0" prefWidth="515.0" styleClass="contrast">
+         <children>
+            <Label layoutX="14.0" layoutY="7.0" text="Possui algum problema de saude" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <RadioButton layoutX="14.0" layoutY="60.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgHealth" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="104.0" layoutY="60.0" mnemonicParsing="false" text="Não" textFill="WHITE" toggleGroup="$tgHealth">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="btnDocument" layoutX="183.0" layoutY="53.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="320.0" text="Anexar documento médico">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="txtaHealthObs" layoutX="13.0" layoutY="135.0" prefHeight="95.0" prefWidth="490.0" />
+            <Label layoutX="14.0" layoutY="93.0" prefHeight="28.0" prefWidth="180.0" text="Observação (Opcional)" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="boxResponsible" layoutX="603.0" layoutY="275.0" prefHeight="287.0" prefWidth="411.0" styleClass="contrast">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="150.0" text="Responsavel" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtResponsibleName" layoutX="14.0" layoutY="60.0" prefHeight="40.0" prefWidth="385.0" promptText="Nome">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtResponsibleContact" layoutX="14.0" layoutY="119.0" prefHeight="40.0" prefWidth="385.0" promptText="Contato">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtResponsibleCpf" layoutX="14.0" layoutY="173.0" prefHeight="40.0" prefWidth="385.0" promptText="CPF">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtDegreeOfKinship" layoutX="14.0" layoutY="233.0" prefHeight="40.0" prefWidth="385.0" promptText="Grau de parentesco">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <TextField fx:id="txtCpf" layoutX="16.0" layoutY="351.0" prefHeight="40.0" prefWidth="515.0" promptText="CPF" />
+      <Label fx:id="labelMessage" layoutX="16.0" layoutY="418.0" prefHeight="81.0" prefWidth="515.0" styleClass="contrast" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

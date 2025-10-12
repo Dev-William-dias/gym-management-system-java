@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="72.0" prefWidth="745.0" stylesheets="@Styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.CustomerController">
+   <children>
+      <ImageView fitHeight="72.0" fitWidth="745.0" pickOnBounds="true">
+         <image>
+            <Image url="@imgs/1920x1280%20academy.jpg" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="dpPaymentDate" layoutX="14.0" layoutY="17.0" prefHeight="40.0" prefWidth="255.0" promptText="Data do Pagamento" />
+      <TextField fx:id="txtPaymentAmount" layoutX="294.0" layoutY="16.0" prefHeight="40.0" prefWidth="255.0" promptText="Valor">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button layoutX="574.0" layoutY="18.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="140.0" text="Atualizar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
